@@ -23,6 +23,44 @@ class Questions {
     private:
     protected:
 };
+//Derived from Questions class
+class ClassicalQuestions: public Questions {
+
+public:
+    string getQuestion() {
+        return question;
+    }
+
+    string getAnswer() {
+        return answer;
+    }
+    int getQuestionNumber() {
+        return questionNumber;
+    }
+
+    void setQuestion(string a) {
+        question = a;
+    }
+
+    void setAnswer(string a) {
+        answer = a;
+    }
+    void setQuestionNumber (int a) {
+        questionNumber = a;
+    }
+    void setQuestionAdress (string a) {
+        questionAdress = a;
+    }
+
+protected:
+
+private:
+    string question;
+    string answer;
+    int questionNumber;
+    string questionAdress;
+
+};
 
 //derived from Question class
 class MultipleChoiceQuestions : public Questions {
