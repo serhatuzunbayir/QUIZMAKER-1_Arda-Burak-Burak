@@ -144,7 +144,67 @@ private:
 
 };
 
+//Derived from Questions class
+class FillBlankQuestions: public Questions {
+
+public:
+    string getQuestion() {
+        return question;
+    }
+
+    string getAnswer() {
+        return answer;
+    }
+    int getQuestionNumber() {
+        return questionNumber;
+    }
+
+    void setQuestion(string a) {
+        question = a;
+    }
+
+    void setAnswer(string a) {
+        answer = a;
+    }
+    void setQuestionNumber (int a) {
+        questionNumber = a;
+    }
+    void setQuestionAdress (string a) {
+        questionAdress = a;
+    }
+
+protected:
+
+private:
+    string question;
+    string answer;
+    int questionNumber;
+    string questionAdress;
+
+};
+
 int main() {
+	string line;
+    string answer;
+
+    //Counter to track true and Falses
+    static int trueCount = 0;
+    static int falseCount = 0;
+
+    //Multiple question number is 35. and in the file one question is 7 line
+    string multipleChoiceQuestions[20][7];
+
+   //Classical question number is 15. and in the file one question is 5 line
+    string classicalQuestions[10][5];
+
+    //Fill in the blank question number is 10. and in the file one question is 7 line
+    string fillBlankQuestions[10][5];
+
+    string multipleChoiceFileAdress = "test_questions.txt";
+    string classicalFileAdress = "classical_questions.txt";
+    string answerBlankFileAdress = "answer_blank.txt";
+    int questionNumber;
+
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;
 }
