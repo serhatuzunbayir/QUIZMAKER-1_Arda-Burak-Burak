@@ -205,6 +205,55 @@ int main() {
     string answerBlankFileAdress = "answer_blank.txt";
     int questionNumber;
 
+    //Files are loaded to program
+      ifstream multipleChoiceFile("test_questions.txt");
+      ifstream classicalFile("classical_questions.txt");
+      ifstream fillBlankFile("answer_blank.txt");
+
+
+      cout<<"Welcome to our Quiz Maker Application\n Questions are coming! Look below!"<<endl;
+
+      //This checks for file is open or not
+          if (multipleChoiceFile.is_open()) {
+              cout << "Multiple Choice Questions are loaded"<<endl<<endl;
+
+              for(int a=0; a<20; a++) {
+                  for (int b= 0 ; b<7; b++) {
+                      getline(multipleChoiceFile,multipleChoiceQuestions[a][b]);
+                  }
+              }
+          }
+
+          //multiple choice questions
+
+          cout << "How many multiple choice questions would you like to answer? Please enter a count max:20" <<endl;
+          cin >> questionNumber;
+
+
+
+          while (questionNumber > 20 || questionNumber < 0 ) {
+              cout << "You exceed the max num of questions or you entered the negative value. Please enter less than 20 again!"<<endl;
+              cin>> questionNumber;
+          }
+
+
+          for (int c = 0; c<questionNumber; c++) {
+              for (int d =0; d<5; d++) {
+                  cout << multipleChoiceQuestions[c][d]<<endl;
+              }
+
+                  cout << "Please enter an answer"<<endl;
+                  cin >> answer;
+
+
+              if (answer == multipleChoiceQuestions[c][5] ||answer == multipleChoiceQuestions[c][6] ) {
+                  trueCount++;
+              }
+
+                  else falseCount++;
+          }
+
+
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;
 }
