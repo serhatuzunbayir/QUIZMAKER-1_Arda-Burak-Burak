@@ -254,6 +254,93 @@ int main() {
           }
 
 
+<<<<<<< Updated upstream
 	
 	return 0;
 }
+=======
+          //classical questions
+          //This checks for file is open or not
+              if (classicalFile.is_open()) {
+                  cout << "Classical Questions are loaded"<<endl;
+
+                  for(int a=0; a<10; a++) {
+                      for (int b= 0 ; b<5; b++) {
+                          getline(classicalFile,classicalQuestions[a][b]);
+                      }
+                  }
+              }
+
+              cout << "How many classical questions would you like to answer? Please enter a count (max:10)" <<endl;
+              cin >> questionNumber;
+
+                  while (questionNumber > 10 || questionNumber < 0 ) {
+                  cout << "You exceed the max num of questions or you entered the negative value. Please enter less than 10 again!"<<endl;
+                  cin>> questionNumber;
+              }
+
+              for (int c = 0; c<questionNumber; c++) {
+                  for (int d =0; d<1; d++) {
+                      cout << classicalQuestions[c][d]<<endl;
+                  }
+
+                  cout << "Please enter an answer"<<endl;
+                  cin >> answer;
+
+
+                  if (answer == classicalQuestions [c][1] || answer == classicalQuestions [c][2] ||answer == classicalQuestions[c][3] ||answer == classicalQuestions[c][4]  ) {
+                      trueCount++;
+                  }
+
+                  else falseCount++;
+              }
+
+              //answerBlank Questions
+
+              if (fillBlankFile.is_open()) {
+                  cout << "Answer Blank Questions are loaded"<<endl;
+
+                  for(int a=0; a<10; a++) {
+                      for (int b= 0 ; b<5; b++) {
+                          getline(fillBlankFile,fillBlankQuestions[a][b]);
+                      }
+                  }
+              }
+
+              cout << "How many answer blank questions would you like to answer? Please enter a count ( max:10)" <<endl;
+              cin >> questionNumber;
+
+                  while (questionNumber > 10 || questionNumber < 0 ) {
+                  cout << "You exceed the max num of questions or you entered the negative value. Please enter less than 10 again!"<<endl;
+                  cin>> questionNumber;
+              }
+
+              for (int c = 0; c<questionNumber; c++) {
+                  for (int d =0; d<1; d++) {
+                      cout << fillBlankQuestions[c][d]<<endl;
+                  }
+
+                  cout << "Please enter an answer"<<endl;
+                  cin >> answer;
+
+
+                  if (answer == fillBlankQuestions [c][1] || answer == fillBlankQuestions [c][2] ||answer == fillBlankQuestions[c][3] ||answer == fillBlankQuestions[c][4] ) {
+                      trueCount++;
+                  }
+
+                  else falseCount++;
+              }
+          //
+
+              cout << "You solved " << trueCount + falseCount << " questions" <<endl;
+              cout << "You answered "<<trueCount << " questions as true" << endl;
+              cout << "You answered "<<falseCount << " questions as false" << endl;
+
+              multipleChoiceFile.close();
+              classicalFile.close();
+              fillBlankFile.close();
+              cin.get();
+
+              return 0;
+          }
+>>>>>>> Stashed changes
